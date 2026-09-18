@@ -3,43 +3,41 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-
+        scale=1.0">
     <meta name="description"
         content="Kate Fontecilla's responsive personal portfolio built with HTML, CSS, Bootstrap, and mobile-first design.">
     <title>Kate Fontecilla | Portfolio</title>
 
     <!-- Bootstrap first -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- Custom CSS after Bootstrap so it can override framework defaults -->
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
     <!-- Responsive Bootstrap navigation -->
     <header class="site-header sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-dark site-navbar" aria-label="Main navigation">
+        <nav class="navbar navbar-expand-lg site-navbar" aria-label="Main navigation">
             <div class="container">
-                <a class="navbar-brand brand d-flex align-items-center gap-2" href="#home">
-                    <span class="brand-mark">KF</span>
-                    <span class="brand-text">
-                        <strong>Kate Fontecilla</strong>
-                        <small class="d-block">Aspiring Full-Stack Developer</small>
-                    </span>
-                </a>
-
+                <!-- navbar-toggler = "left-assigned by default" -->
+                <!-- data-bs-toggle = "sused t show and hide content" -->
+                <!-- data-bs-target = "accepts a CSS selector to where the collapse will be applied" -->
+                <!-- aria-controls = "if data-bs-target points to an id selector, this property needs to be added to control the element" -->
+                <!-- aria-expanded = "needs to be added to control the element. This explicitly conveys the current state of the collapsible element" -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
                     aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="mainNav">
-                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 nav-links">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <ul class="navbar-nav nav-links ms-auto align-items-lg-center gap-lg-2">
+                        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                        <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
                     </ul>
                 </div>
             </div>
@@ -50,97 +48,206 @@
         <!-- Hero: stacks on mobile, becomes two columns on large screens -->
         <section class="hero-section py-5 py-lg-6" aria-labelledby="hero-title">
             <div class="container">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-7 order-2 order-lg-1">
+                <div class="row align-items-center justify-content-center g-5">
+                    <div class="col-lg-7 order-2 order-lg-1 text-center text-lg-start">
                         <p class="section-kicker mb-2">Hello, I'm</p>
-                        <h1 id="hero-title" class="display-3 fw-bold mb-3 ">Kate Fontecilla</h1>
-                        <p class="hero-role lead fw-semibold">
-                            Aspiring Full-Stack Web Developer
-                        </p>
-                        <p class="hero-description mb-4">
-                            I'm a Backend Developer with experience building and maintaining web applications,
-                            particularly on the server side. I'm currently expanding my skills in Frontend web
+                        <h1 id="hero-title" class="display-3 fw-bold mb-0">Kate
+                            <span id="hero-subtitle">Fontecilla</span>
+                        </h1>
+                        <p class="hero-role lead fw-medium">Aspiring Full-Stack Web Developer</p>
+                        <p class="hero-description display-4 mb-4 text-center text-lg-start mx-auto mx-lg-0">
+                            I'm a Backend Developer with experience on developing and maintaining web applications, with
+                            a focus on server-side development. I am currently expanding my skills in Frontend web
                             development, learning how to create responsive and user-friendly interfaces as I work toward
                             becoming a Full-Stack Developer.
                         </p>
-
-                        <div class="hero-actions d-flex flex-wrap gap-3">
-                            <a href="#projects" class="btn btn-primary btn-lg ">View My Projects</a>
-                            <a href="https://kate-fontecilla.github.io/portfolio-website/"
-                                class="btn btn-outline-primary btn-lg">GitHub</a>
+                        <div
+                            class="hero-actions d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start mt-auto">
+                            <!-- <a href="files/resume.pdf" download class="btn btn-primary fw-semibold">
+                                <i class="bi bi-download me-1 download-icon"></i>
+                                Download CV
+                            </a> -->
+                            <a href="#projects" class="btn btn-primary fw-semibold">
+                                View Projects
+                            </a>
+                            <a href="#contacts" class="btn btn-secondary fw-semibold">
+                                Hire Me
+                            </a>
                         </div>
                     </div>
-
-                    <div class="col-lg-5 order-1 order-lg-2 text-center hero-image">
-                        <img class="profile-image img-fluid" src="images/profile.jpg"
+                    <div class="hero-image col-lg-5 order-1 order-lg-2 text-center">
+                        <img class="profile-image img-fluid" src="images/profile.png"
                             alt="Profile photo for Kate Fontecilla" width="360" height="360">
-
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About -->
-        <section id="about" class="section-band">
-            <div class="container section-space ">
-                <div class="row g-4 align-items-start">
+        <!-- Skills Preview-->
+        <section class="skills-preview section-band mt-4">
+            <div class="container section-space">
+                <div class="skills-track d-flex flex-wrap align-items-center column-gap-5 row-gap-1">
+                    <div class="skill-item">
+                        <i class="bi bi-filetype-html"></i>
+                        <span>HTML</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="bi bi-css"></i>
+                        <span>CSS</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="bi bi-javascript"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="bi bi-typescript"></i>
+                        <span>Typescript</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="bi bi-database-fill"></i>
+                        <span>MySQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="bi bi-git"></i>
+                        <span>Git</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section id="about" class="about-section section-band">
+            <div class="container section-space">
+                <div class="row align-items-start">
                     <div class="col-lg-4">
-                        <p class="section-kicker mb-2">About Me</p>
-                        <h2 class="section-title display-6 fw-semibold mb-0">A little about me</h2>
+                        <p class="section-kicker mb-2">About</p>
+                        <h2 class="section-title display-6 fw-semibold mb-3">A little about me</h2>
                     </div>
                     <div class="col-lg-8 about-grid">
                         <div class="row g-4">
                             <div class="col-md-6">
-                                <p class="mb-0">
+                                <p class="mb-3">
                                     My journey in software development has primarily focused on the backend, where I've
                                     worked with server-side logic, APIs, databases, and the different pieces that make
                                     an application work behind the scenes.
                                 </p>
-                                <br>
                                 <p class="mb-0">
-                                    While backend development has been my main focus, I've always been interested in
-                                    understanding the bigger picture of web development. I'm currently expanding my
-                                    knowledge in frontend development, learning how to build responsive layouts,
-                                    interactive interfaces, and user-friendly experiences using modern web technologies.
-                                </p>
-                                <br>
-                                <p class="mb-0">
-                                    I'm constantly learning, experimenting, and challenging myself to become a better
-                                    developer—one project at a time.
+                                    With a strong foundation in backend development, I am expanding my expertise in
+                                    frontend development to build responsive, intuitive, and user-focused web
+                                    applications.
                                 </p>
                             </div>
                             <div class="col-md-6">
-                                <p class="mb-0">
+                                <p class="mb-5">
                                     As I continue learning and gaining hands-on experience on the frontend, my goal is
                                     to become a well-rounded Full-Stack Developer who can work across both the frontend
-                                    and backend of an application. I enjoy solving problems, exploring new technologies,
-                                    and turning ideas into applications that are not only functional but also intuitive
-                                    and enjoyable to use.
+                                    and backend of an application.
                                 </p>
+                                <div class="mb-0 stats-grid  text-center">
+                                    <div class="row g-3 stats-grid">
+                                        <div class="col-4">
+                                            <h3 class="section-kicker mb-1">2019</h3>
+                                            <p class="mb-0 fw-semibold">Building Since</p>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <h3 class="section-kicker mb-1">2</h3>
+                                            <p class="mb-0  fw-semibold">Repositories</p>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <h3 class="section-kicker mb-1">1</h3>
+                                            <p class="mb-0  fw-semibold">Organization</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- Skills: 1 column mobile, 2 on small+, 4 on large+ -->
-        <section id="skills" class="section-band">
+        <!-- Skills -->
+        <section id="skills" class="skills-section section-band">
             <div class="container section-space">
-                <div class="section-heading mb-4 mb-lg-5">
+                <div class="mb-4 mb-lg-5">
                     <p class="section-kicker mb-2">Skills</p>
-                    <h2 class="section-title display-6 fw-bold mb-3">What I'm learning</h2>
+                    <h2 class="section-title display-6 fw-bold mb-3">What I work with</h2>
                     <p class="section-intro lead mb-0">
-                        Core tools and concepts I am practicing as I grow into full-stack development.
+                        Core tools and concepts I am working with and is currently practicing as I grow into full-stack
+                        development.
                     </p>
                 </div>
 
                 <div class="row g-4">
                     <div class="col-sm-6 col-lg-3">
                         <article class="skill-card card h-100 shadow-sm">
-                            <div class="card-body p-4">
+                            <div class="card-body p-3">
                                 <span class="skill-number">01</span>
-                                <h3 class="h4 card-title">HTML</h3>
+                                <h3 class="h4 card-title">Node.js</h3>
+                                <p class="card-text mb-0">
+                                    Used Node.js to build backend services, APIs, and server-side applications using
+                                    JavaScript and TypeScript. </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <article class="skill-card card h-100 shadow-sm">
+                            <div class="card-body p-3">
+                                <span class="skill-number">02</span>
+                                <h3 class="card-title">ExpressJS and AdonisJS</h3>
+                                <p class="card-text mb-0">
+                                    Built RESTful APIs and backend services using Express.js and AdonisJS. </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <article class="skill-card card h-100 shadow-sm">
+                            <div class="card-body p-3">
+                                <span class="skill-number">03</span>
+                                <h3 class="card-title">MySQL</h3>
+                                <p class="card-text mb-0">
+                                    Worked with MySQL for relational database design, queries, migrations,
+                                    relationships, and efficient data management. </p>
+                            </div>
+                        </article>
+                    </div>
+
+
+                    <div class="col-sm-6 col-lg-3">
+                        <article class="skill-card card h-100 shadow-sm">
+                            <div class="card-body p-3">
+                                <span class="skill-number">04</span>
+                                <h3 class="card-title">AWS</h3>
+                                <p class="card-text mb-0">
+                                    Worked with AWS EC2, S3, and Lambda for server deployment, storage, and serverless
+                                    automation. </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <article class="skill-card card h-100 shadow-sm">
+                            <div class="card-body p-3">
+                                <span class="skill-number">05</span>
+                                <h3 class="card-title">Git &amp; GitHub</h3>
+                                <p class="card-text mb-0">
+                                    Version control, commits, repositories, deployment, and development workflow.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <article class="skill-card card h-100 shadow-sm">
+                            <div class="card-body p-3">
+                                <span class="skill-number">06</span>
+                                <h3 class="card-title">HTML</h3>
                                 <p class="card-text mb-0">
                                     Semantic structure, accessible markup, and clean document organization.
                                 </p>
@@ -150,9 +257,9 @@
 
                     <div class="col-sm-6 col-lg-3">
                         <article class="skill-card card h-100 shadow-sm">
-                            <div class="card-body p-4">
-                                <span class="skill-number">02</span>
-                                <h3 class="h4 card-title">CSS</h3>
+                            <div class="card-body p-3">
+                                <span class="skill-number">07</span>
+                                <h3 class="card-title">CSS</h3>
                                 <p class="card-text mb-0">
                                     Responsive styling, media queries, spacing, typography, and custom components.
                                 </p>
@@ -162,23 +269,11 @@
 
                     <div class="col-sm-6 col-lg-3">
                         <article class="skill-card card h-100 shadow-sm">
-                            <div class="card-body p-4">
-                                <span class="skill-number">03</span>
+                            <div class="card-body p-3">
+                                <span class="skill-number">08</span>
                                 <h3 class="h4 card-title">Bootstrap</h3>
                                 <p class="card-text mb-0">
                                     Containers, grid columns, utilities, navigation, cards, forms, and breakpoints.
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-sm-6 col-lg-3">
-                        <article class="skill-card card h-100 shadow-sm">
-                            <div class="card-body p-4">
-                                <span class="skill-number">04</span>
-                                <h3 class="h4 card-title">Git &amp; GitHub</h3>
-                                <p class="card-text mb-0">
-                                    Version control, commits, repositories, deployment, and development workflow.
                                 </p>
                             </div>
                         </article>
@@ -187,7 +282,7 @@
             </div>
         </section>
 
-        <!-- Projects: 1 card mobile, 2 medium, 3 large -->
+        <!-- Projects -->
         <section id="projects" class="section-band">
             <div class="container section-space">
                 <div class="section-heading mb-4 mb-lg-5">
@@ -199,7 +294,7 @@
                 </div>
 
                 <div class="row g-4">
-                    <div class="projects-grid col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4">
                         <article class="project-card card h-100 shadow-sm">
                             <div class="project-preview d-flex align-items-center justify-content-center"
                                 aria-hidden="true">
@@ -208,7 +303,7 @@
                             </div>
                             <div class="card-body p-4 d-flex flex-column">
                                 <span class="project-number">01</span>
-                                <h3 class="h4 card-title">Personal Portfolio</h3>
+                                <h3 class="card-title">Personal Portfolio</h3>
                                 <p class="card-text">
                                     A responsive personal portfolio built with semantic HTML, Bootstrap,
                                     custom CSS, and mobile-first design.
@@ -221,8 +316,8 @@
                                 <div class="d-flex flex-wrap gap-2 mt-auto">
                                     <a href="https://kate-fontecilla.github.io/portfolio-website/"
                                         class="btn btn-primary">GitHub</a>
-                                    <a href="#" class="btn btn-outline-dark "
-                                        aria-label="Live demo link placeholder">Live Demo</a>
+                                    <a href="#" class="btn btn-secondary" aria-label="Live demo link placeholder">Live
+                                        Demo</a>
                                 </div>
                             </div>
                         </article>
@@ -236,7 +331,7 @@
                             </div>
                             <div class="card-body p-4 d-flex flex-column">
                                 <span class="project-number">02</span>
-                                <h3 class="h4 card-title">Future Project</h3>
+                                <h3 class="card-title">Future Project</h3>
                                 <p class="card-text">
                                     Replace this card with a completed project. Explain its purpose,
                                     main features, and the technologies used.
@@ -258,7 +353,7 @@
                             </div>
                             <div class="card-body p-4 d-flex flex-column">
                                 <span class="project-number">03</span>
-                                <h3 class="h4 card-title">Future Project</h3>
+                                <h3 class="card-title">Future Project</h3>
                                 <p class="card-text">
                                     Add another project here so the portfolio demonstrates responsive
                                     Bootstrap card behavior at mobile, tablet, and desktop widths.
@@ -276,7 +371,7 @@
         </section>
 
         <!-- Contact -->
-        <section id="contact" class="section-band">
+        <section id="contacts" class="section-band">
             <div class="container section-space">
                 <div class="row g-5">
                     <div class="col-lg-5">
@@ -333,7 +428,6 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JavaScript bundle required for the collapsible navbar -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
